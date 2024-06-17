@@ -123,11 +123,9 @@ app.UseMiddleware<LoginServers>();
 //});
 app.UseRouting();
 app.UseCors();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 #endregion
 
